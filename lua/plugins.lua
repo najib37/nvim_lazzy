@@ -14,6 +14,14 @@ return {
 	require "Noice",
 	require "TreeSj",
 	require "Lightspeed",
-	require "Autopaire",
-	-- require "NvimUfo", // needs lsp
+	require "Autopaire", -- TODO 
+	require "Dressing",
+	require "Cmp",
+	require "lsp.Mason",
+	require "lsp.MasonLspConfig",
+	require "lsp.LspConfig",
+	require "lsp.serverSetting.TsTools",
+	require "Harpoon",
+	require "dap.Dap",
+	-- require "NvimUfo", -- [commented till i fix the highlite]
 }

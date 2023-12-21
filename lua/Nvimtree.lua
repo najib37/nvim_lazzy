@@ -11,6 +11,12 @@ return {
 			  vim.cmd":NvimTreeToggle"
 		  end
 	  },
+	  {
+		  "<leader>e",
+		  function()
+			  vim.cmd":NvimTreeToggle"
+		  end
+	  },
   },
   config = function()
 	  require("nvim-tree").setup {
@@ -20,9 +26,6 @@ return {
 		  view = {
 			  width = 20,
 			  side = 'left',
-		  },
-		  renderer = {
-			  group_empty = true,
 		  },
 		  filters = {
 			  dotfiles = true,
