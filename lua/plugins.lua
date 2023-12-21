@@ -23,5 +23,6 @@ return {
 	require "lsp.serverSetting.TsTools",
 	require "Harpoon",
 	require "dap.Dap",
+	require "dap.nodeDap",
 	-- require "NvimUfo", -- [commented till i fix the highlite]
 }
