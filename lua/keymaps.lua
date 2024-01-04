@@ -18,6 +18,8 @@ keymap("", "<Space>", "<Nop>", opts)
 
 -- Normal --
 -- Better window navigation
+keymap("n", "<leader>w", ":w!<CR>", opts)
+keymap("n", "<leader>q", ":wq<CR>", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
@@ -30,6 +32,9 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+keymap("n", "<A-Up>", "}", opts)
+keymap("n", "<A-Down>", "{", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)

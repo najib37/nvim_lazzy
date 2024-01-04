@@ -1,11 +1,13 @@
 return {
 	"rcarriga/nvim-notify",
 	event = "VeryLazy",
-	opts = {
-		timeout = 100,
-		-- to add some other things
-	},
-	config = function(_, opts)
-		require("notify").setup{opts}
+	config = function()
+		require("notify").setup({
+			timeout = 50,
+			stages = "fade_in_slide_out",
+			minimum_width = 10,
+			maxWidth = 50,
+			-- to add some other things
+		})
 	end
 }

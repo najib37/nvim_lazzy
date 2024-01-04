@@ -9,9 +9,15 @@ return {
 		{ 'hrsh7th/cmp-cmdline' },
 	},
 	config = function()
-		local cmp = require'cmp'
-		local kind_icons = require"kindicons"
+		local cmp = require 'cmp'
+		local kind_icons = require "kindicons"
+		-- luasnip = require"luasnip"
 		cmp.setup({
+			-- snipet = {
+			-- 	expand = function(args)
+			-- 		luasnip.lsp_expand(args.body)
+			-- 	end,
+			-- },
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				preselect = cmp.PreselectMode.None,
@@ -37,7 +43,6 @@ return {
 					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 				},
 			},
-
 			mapping = {
 				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 				["<C-e>"] = cmp.mapping {
@@ -46,33 +51,33 @@ return {
 				},
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
+				if cmp.visible() then
 						cmp.select_next_item()
 						fallback()
 					else
 						fallback()
 					end
-				end, {
-				"i",
-				"s",
-			}),
-			["<S-Tab>"] = cmp.mapping(function(fallback)
+					end, {
+						"i",
+						"s",
+				}),
+				["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
-					cmp.select_prev_item()
-				else
-					fallback()
-				end
-			end, {
-			"i",
-			"s",
-		}),
-	},
-})
+						cmp.select_prev_item()
+					else
+						fallback()
+					end
+					end, {
+						"i",
+						"s",
+				}),
+			},
+		})
 	end
 }
 
 
 -- confirm_opts = {
-	-- 	behavior = cmp.ConfirmBehavior.Replace,
-	-- 	select = false,
-	-- },
+-- 	behavior = cmp.ConfirmBehavior.Replace,
+-- 	select = false,
+-- },
