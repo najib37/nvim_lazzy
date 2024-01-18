@@ -28,8 +28,11 @@ return {
 	require "treeNav",
 	require "NeoGit",
 	require "GitSign",
+	require "lua_snip",
+	require "friendly",
+	require "autoTag",
+	require "TodoCmp",
 	-- require "NvimShip",
-	-- require "lua_snip",
 	-- require "dap.nodeDap",
 	-- require "NvimUfo", -- [commented till i fix the highlighte]
 }

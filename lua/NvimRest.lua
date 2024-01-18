@@ -6,7 +6,7 @@ return {
 
     rest_nvim.setup({
       -- Open request results in a horizontal split
-      result_split_horizontal = false,
+      result_split_horizontal = true,
       -- Skip SSL verification, useful for unknown certificates
       skip_ssl_verification = false,
       -- Highlight request on run

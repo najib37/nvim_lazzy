@@ -14,7 +14,7 @@ local function diagnosticSetup()
   local config = {
     virtual_text = false, -- disable virtual text
     signs = {
-      active = signs,   -- show signs
+      active = signs,     -- show signs
     },
     update_in_insert = true,
     underline = true,
@@ -40,8 +40,8 @@ local function diagnosticSetup()
 end
 
 local function keymaps()
-  vim.keymap.set('n', '<C-Up>', vim.diagnostic.goto_prev)
-  vim.keymap.set('n', '<C-Down>', vim.diagnostic.goto_next)
+  vim.keymap.set('n', '<,-Up>', vim.diagnostic.goto_prev)
+  vim.keymap.set('n', '<,-Down>', vim.diagnostic.goto_next)
   vim.keymap.set('n', '<leader>qq', ":Telescope diagnostics<cr>")
 
   -- Use LspAttach autocommand to only map the following keys
@@ -90,8 +90,20 @@ return {
   config = function()
     diagnosticSetup()
     keymaps();
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
     require "lsp.serverSetting.lua_ls" -- lua_ls setup
     require "lsp.serverSetting.clangd" -- clangd setup
+    require 'lspconfig'.prismals.setup {
+      capabilities = capabilities,
+    }
+
+    require 'lspconfig'.html.setup {
+      capabilities = capabilities,
+    }
+    require 'lspconfig'.jsonls.setup {
+      capabilities = capabilities,
+    }
     -- require "lsp.serverSetting.Tstoolserver" -- clangd setup
     -- require "lsp.serverSetting.tsserver" -- clangd setup
   end

@@ -18,6 +18,12 @@ keymap("", "<Space>", "<Nop>", opts)
 
 -- Normal --
 -- Better window navigation
+-- <BS>
+keymap("n", ",x", ":bdelete<cr>", opts)
+keymap("n", ",,", ":close<cr>", opts)
+keymap("n", ",c", ":close<cr>", opts)
+keymap("n", "<BS>", "<A-x>", opts)
+
 keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<leader>q", ":wq<CR>", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -48,6 +54,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
+keymap("i", "ff", "<ESC>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
