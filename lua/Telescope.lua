@@ -7,21 +7,39 @@ return {
 	},
 	keys = {
 		{
-			"<leader>fg",
+			",f",
 			function()
 				require('telescope.builtin').live_grep()
 			end
 		},
 		{
-			"<leader>s",
+			",s",
 			function()
 				require('telescope.builtin').find_files()
 			end
 		},
 		{
-			"<leader>fm",
+			",m",
 			function()
 				require('telescope.builtin').man_pages()
+			end
+		},
+		{
+			",d",
+			function()
+				require('telescope.builtin').lsp_document_symbols()
+			end
+		},
+		{
+			",v",
+			function()
+				require('telescope.builtin').registers()
+			end
+		},
+		{
+			",t",
+			function()
+				require('telescope.builtin').current_buffer_tags()
 			end
 		},
 	},
