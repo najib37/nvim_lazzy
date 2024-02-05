@@ -14,7 +14,7 @@ return {
 	require "Noice",
 	require "TreeSj",
 	require "Lightspeed",
-	require "Autopaire", -- TODO 
+	require "Autopaire", -- TODO
 	require "Dressing",
 	require "Cmp",
 	require "lsp.Mason",
@@ -31,7 +31,7 @@ return {
 	require "lua_snip",
 	require "friendly",
 	require "autoTag",
-	require "TodoCmp",
+	require "TodoCmp", -- TODO fix the vs-snippets
 	-- require "NvimShip",
 	-- require "dap.nodeDap",
 	-- require "NvimUfo", -- [commented till i fix the highlighte]

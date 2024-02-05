@@ -3,9 +3,9 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("notify").setup({
-			timeout = 120,
+			timeout = 200,
 			stages = "fade_in_slide_out",
-			minimum_width = 10,
+			minimum_width = 50,
 			maxWidth = 50,
 			-- to add some other things
 		})

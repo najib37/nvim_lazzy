@@ -19,10 +19,27 @@ keymap("", "<Space>", "<Nop>", opts)
 -- Normal --
 -- Better window navigation
 -- <BS>
+--
+-- command
+keymap("n", ",,", ":", {})
+keymap("i", ",,", "<Esc>:", {})
+
+keymap("n", "fd", ":", {})
+keymap("i", "df", "<Esc>:", {})
+-- keymap("n", "<Up>", "", opts)
+-- keymap("n", "<Down>", "", opts)
+-- keymap("n", "<Left>", "", opts)
+-- keymap("n", "<Right>", "", opts)
+--
+-- keymap("i", "<Up>", "", opts)
+-- keymap("i", "<Down>", "", opts)
+-- keymap("i", "<Left>", "", opts)
+-- keymap("i", "<Right>", "", opts)
+
+
 keymap("n", ",x", ":bdelete<cr>", opts)
-keymap("n", ",,", ":close<cr>", opts)
 keymap("n", ",c", ":close<cr>", opts)
-keymap("n", "<BS>", "<A-x>", opts)
+keymap("n", "<BS>", "di", opts)
 
 keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<leader>q", ":wq<CR>", opts)
@@ -54,7 +71,6 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-keymap("i", "ff", "<ESC>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
