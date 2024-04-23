@@ -7,3 +7,4 @@ require "options"
 require "keymaps"
 require "lazyConf"
 require "colorscheme"
+-- vim.cmd("colorscheme snazzy")

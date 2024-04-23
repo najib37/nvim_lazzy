@@ -24,7 +24,7 @@ return {
 	require "Harpoon",
 	require "dap.Dap",
 	require "Neorg",
-	require "NvimRest",
+	-- require "NvimRest", -- INFO: fd error 
 	require "treeNav",
 	require "NeoGit",
 	require "GitSign",
@@ -32,6 +32,11 @@ return {
 	require "friendly",
 	require "autoTag",
 	require "TodoCmp", -- TODO fix the vs-snippets
+  require "scoopNvim", -- TODO! keymaps
+  -- require "neoTree",
+  require "oilNvim",
+  -- require "colorscheme.nord"
+  -- require "tabbyNvim",
 	-- require "NvimShip",
 	-- require "dap.nodeDap",
 	-- require "NvimUfo", -- [commented till i fix the highlighte]

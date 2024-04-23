@@ -90,20 +90,85 @@ return {
   config = function()
     diagnosticSetup()
     keymaps();
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     require "lsp.serverSetting.lua_ls" -- lua_ls setup
     require "lsp.serverSetting.clangd" -- clangd setup
+
     require 'lspconfig'.prismals.setup {
+      capabilities = capabilities,
+      single_file_support = true,
+    }
+
+    require 'lspconfig'.docker_compose_language_service.setup {
+      capabilities = capabilities,
+      -- cmd = {"docker-compose-langserver", "--stdio"},
+      single_file_support = true,
+      filetypes = { "yaml.*", "*.yaml", "*.yml", "yml.*" }
+    }
+
+    require 'lspconfig'.dockerls.setup {
+      capabilities = capabilities,
+      single_file_support = true,
+    }
+
+    -- require 'lspconfig'.html.setup {
+    --
+    --   capabilities = capabilities,
+    -- }
+
+    require 'lspconfig'.jsonls.setup {
+      capabilities = capabilities,
+      single_file_support = true,
+    }
+
+    require('lspconfig').yamlls.setup {
+      capabilities = capabilities,
+    }
+
+    require 'lspconfig'.pyright.setup {
+      capabilities = capabilities,
+      single_file_support = true,
+      settings = {
+        pyright = {
+          disableLanguageServices = false,
+          disableOrganizeImports = false
+        },
+        python = {
+          analysis = {
+            autoImportCompletions = true,
+            autoSearchPaths = true,
+            diagnosticMode = "workspace", -- openFilesOnly, workspace
+            typeCheckingMode = "basic",   -- off, basic, strict
+            useLibraryCodeForTypes = true
+          }
+        }
+      },
+    }
+
+    require 'lspconfig'.cssls.setup {
       capabilities = capabilities,
     }
 
     require 'lspconfig'.html.setup {
       capabilities = capabilities,
+      cmd = { "vscode-html-language-server", "--stdio" },
+      filetypes = { "html" },
+      init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+          css = true,
+          javascript = true
+        },
+        provideFormatter = true
+      },
+      settings = {},
+      single_file_support = true
     }
-    require 'lspconfig'.jsonls.setup {
-      capabilities = capabilities,
-    }
+
     -- require "lsp.serverSetting.Tstoolserver" -- clangd setup
     -- require "lsp.serverSetting.tsserver" -- clangd setup
   end

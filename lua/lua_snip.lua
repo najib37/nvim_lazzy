@@ -1,11 +1,28 @@
 return {
   "L3MON4D3/LuaSnip",
-  version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-  -- install jsregexp (optional!).
+  version = "v2.*",
+	dependencies = {
+    { "rafamadriz/friendly-snippets" }
+	},
+	keys = {
+		{
+			"<TAB>",
+			function()
+        require('luasnip').jump(1)
+			end
+		},
+		{
+			"<S-TAB>",
+			function()
+        require('luasnip').jump(-1)
+			end
+		},
+  },
   build = "make install_jsregexp",
   config = function()
+
     local Luasnip = require('luasnip')
-    require("luasnip.loaders.from_vscode").load {
-   }
+    Luasnip.setup{}
+    require("luasnip.loaders.from_vscode").lazy_load()
   end
 }

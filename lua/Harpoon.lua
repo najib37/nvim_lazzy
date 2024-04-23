@@ -11,7 +11,7 @@
 
 return {
 	"ThePrimeagen/harpoon",
-	lazzy = "VeryLazy",
+	-- lazy = "VeryLazy",
 	keys = {
 		{
 			"<leader>j",

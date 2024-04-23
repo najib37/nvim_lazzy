@@ -42,6 +42,12 @@ return {
 				require('telescope.builtin').current_buffer_tags()
 			end
 		},
+		{
+			",,",
+			function()
+         require('telescope.builtin').buffers()
+			end
+		},
 	},
 	config = function()
 		require("telescope").setup{}

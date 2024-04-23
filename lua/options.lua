@@ -38,6 +38,12 @@ local options = {
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
 }
 
+vim.opt.sessionoptions = { -- required
+    "buffers",
+    "tabpages",
+    "globals",
+}
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

@@ -1,4 +1,7 @@
-local opts = { noremap = true, silent = true }
+local opts = {
+  noremap = true,
+  silent = true,
+}
 
 local term_opts = { silent = true }
 
@@ -6,7 +9,7 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+-- keymap("", "<Space>", "<Nop>", opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -21,11 +24,27 @@ keymap("", "<Space>", "<Nop>", opts)
 -- <BS>
 --
 -- command
-keymap("n", ",,", ":", {})
-keymap("i", ",,", "<Esc>:", {})
+-- keymap("n", ",,", ":", opts)
+-- keymap("i", ",,", "<Esc>:", opts)
 
-keymap("n", "fd", ":", {})
-keymap("i", "df", "<Esc>:", {})
+-- tabs navigation
+keymap("n", ",1", ":tabNext<cr>", opts)
+keymap("n", ",2", ":tabprevious<cr>", opts)
+keymap("n", "<C-l>", ":tabNext<cr>", opts)
+keymap("n", "<C-h>", ":tabprevious<cr>", opts)
+-- keymap("n", ",3", ":tabN3<cr>", opts)
+-- keymap("n", ",4", ":tabN4<cr>", opts)
+
+
+keymap("i", "<C-l>", "<ESC>:tabNext<cr>", opts)
+keymap("i", "<C-h>", "<ESC>:tabprevious<cr>", opts)
+
+keymap("n", ",.", "tabclose<cr>:", opts)
+keymap("n", ".,", "tabclose<cr>:", opts)
+
+keymap("n", "fd", ":", opts)
+keymap("i", "df", "<Esc>:", opts)
+
 -- keymap("n", "<Up>", "", opts)
 -- keymap("n", "<Down>", "", opts)
 -- keymap("n", "<Left>", "", opts)
@@ -37,14 +56,15 @@ keymap("i", "df", "<Esc>:", {})
 -- keymap("i", "<Right>", "", opts)
 
 
-keymap("n", ",x", ":bdelete<cr>", opts)
+-- keymap("n", ",z", ":BufferLinePickClose<CR>", opts)
+keymap("n", ",x", ":bdelete<CR>", opts)
 keymap("n", ",c", ":close<cr>", opts)
 keymap("n", "<BS>", "di", opts)
 
 keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<leader>q", ":wq<CR>", opts)
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-u>", ":redo<CR>", opts)

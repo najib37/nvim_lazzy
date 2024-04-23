@@ -1,4 +1,4 @@
 return {
 	'ggandor/lightspeed.nvim',
-	lazzy = false
+	-- lazy = false
 }
