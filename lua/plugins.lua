@@ -1,43 +1,51 @@
 return {
 	{'nvim-tree/nvim-web-devicons'},
 	{"nvim-lua/plenary.nvim"},
-	require 'Treesitter',
-	require 'Comments',
-	require 'Nvimtree',
-	require 'Telescope',
-	require 'Bufferline',
-	require "Alpha",
-	require "Lualine",
-	require "Indentline",
-	require "Toggleterm",
-	require "Notify",
-	require "Noice",
-	require "TreeSj",
-	require "Lightspeed",
-	require "Autopaire", -- TODO
-	require "Dressing",
-	require "Cmp",
+
+  -- lsp config
 	require "lsp.Mason",
 	require "lsp.MasonLspConfig",
 	require "lsp.LspConfig",
 	require "lsp.serverSetting.TsTools",
-	require "Harpoon",
+
+  -- dap config
 	require "dap.Dap",
-	require "Neorg",
+	-- require "dap.nodeDap",
+
+  -- plugins
+	require 'plug.luarocks',
+  require 'plug.tsComments',
+	-- require "plug.Neorg",
+	require 'plug.Treesitter',
+	require 'plug.Comments',
+	require 'plug.Nvimtree',
+	require 'plug.Telescope',
+	require 'plug.Bufferline',
+	require "plug.Alpha",
+	require "plug.Lualine",
+  require "plug.Indentline",
+	require "plug.Toggleterm",
+	require "plug.Notify",
+	require "plug.Noice",
+	require "plug.TreeSj",
+	require "plug.Lightspeed",
+	require "plug.Autopaire",
+	require "plug.Dressing",
+	require "plug.Cmp",
+	require "plug.Harpoon",
 	-- require "NvimRest", -- INFO: fd error 
-	require "treeNav",
-	require "NeoGit",
-	require "GitSign",
-	require "lua_snip",
-	require "friendly",
-	require "autoTag",
-	require "TodoCmp", -- TODO fix the vs-snippets
-  require "scoopNvim", -- TODO! keymaps
+	require "plug.treeNav",
+	require "plug.NeoGit",
+	require "plug.GitSign",
+	require "plug.lua_snip",
+	require "plug.friendly",
+	require "plug.autoTag",
+	require "plug.TodoCmp", -- TODO fix the vs-snippets
+  require "plug.scoopNvim", -- TODO! keymaps
   -- require "neoTree",
-  require "oilNvim",
+  require "plug.oilNvim",
   -- require "colorscheme.nord"
   -- require "tabbyNvim",
 	-- require "NvimShip",
-	-- require "dap.nodeDap",
 	-- require "NvimUfo", -- [commented till i fix the highlighte]
 }

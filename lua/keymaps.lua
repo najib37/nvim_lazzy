@@ -45,16 +45,14 @@ keymap("n", ".,", "tabclose<cr>:", opts)
 keymap("n", "fd", ":", opts)
 keymap("i", "df", "<Esc>:", opts)
 
--- keymap("n", "<Up>", "", opts)
--- keymap("n", "<Down>", "", opts)
--- keymap("n", "<Left>", "", opts)
--- keymap("n", "<Right>", "", opts)
---
--- keymap("i", "<Up>", "", opts)
--- keymap("i", "<Down>", "", opts)
--- keymap("i", "<Left>", "", opts)
--- keymap("i", "<Right>", "", opts)
+keymap("n", "<S-Up>", "", opts)
+keymap("n", "<S-Down>", "", opts)
 
+keymap("i", "<S-Up>", "", opts)
+keymap("i", "<S-Down>", "", opts)
+
+keymap("v", "<S-Up>", "", opts)
+keymap("v", "<S-Down>", "", opts)
 
 -- keymap("n", ",z", ":BufferLinePickClose<CR>", opts)
 keymap("n", ",x", ":bdelete<CR>", opts)
@@ -71,13 +69,13 @@ keymap("n", "<C-u>", ":redo<CR>", opts)
 keymap("n", "<U>", ":redo<CR>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
-keymap("n", "<A-Up>", "}", opts)
-keymap("n", "<A-Down>", "{", opts)
+-- keymap("n", "<A-Up>", "}", opts)
+-- keymap("n", "<A-Down>", "{", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)

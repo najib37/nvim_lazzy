@@ -94,7 +94,6 @@ return {
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
     require "lsp.serverSetting.lua_ls" -- lua_ls setup
     require "lsp.serverSetting.clangd" -- clangd setup
 
@@ -114,11 +113,6 @@ return {
       capabilities = capabilities,
       single_file_support = true,
     }
-
-    -- require 'lspconfig'.html.setup {
-    --
-    --   capabilities = capabilities,
-    -- }
 
     require 'lspconfig'.jsonls.setup {
       capabilities = capabilities,
@@ -156,7 +150,7 @@ return {
     require 'lspconfig'.html.setup {
       capabilities = capabilities,
       cmd = { "vscode-html-language-server", "--stdio" },
-      filetypes = { "html" },
+      filetypes = { "html", "htmldjango", "*.httl" },
       init_options = {
         configurationSection = { "html", "css", "javascript" },
         embeddedLanguages = {
@@ -169,7 +163,7 @@ return {
       single_file_support = true
     }
 
+    -- require "lsp.serverSetting.tsserver"
     -- require "lsp.serverSetting.Tstoolserver" -- clangd setup
-    -- require "lsp.serverSetting.tsserver" -- clangd setup
   end
 }

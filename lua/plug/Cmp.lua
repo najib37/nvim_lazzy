@@ -11,7 +11,7 @@ return {
   },
   config = function()
     local cmp = require 'cmp'
-    local kind_icons = require "kindicons"
+    local kind_icons = require "plug.kindicons"
     local luasnip = require "luasnip"
 
     cmp.setup({

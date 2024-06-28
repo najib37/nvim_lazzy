@@ -1,6 +1,6 @@
 return {
   "nvim-neorg/neorg",
-  build = ":Neorg sync-parsers",
+  version = "*",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     vim.keymap.set("n", "<leader>n", ":silent Neorg journal<CR>")
@@ -15,9 +15,9 @@ return {
         file_location = '~/Documents/neorg/journal/'
       },
       load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.defaults"] = {},  -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = {  -- Manages Neorg workspaces
+        ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
             workspaces = {
               work = "~/Documents/neorg/work",
