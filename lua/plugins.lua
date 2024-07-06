@@ -15,7 +15,7 @@ return {
   -- plugins
 	require 'plug.luarocks',
   require 'plug.tsComments',
-	-- require "plug.Neorg",
+	require "plug.Neorg",
 	require 'plug.Treesitter',
 	require 'plug.Comments',
 	require 'plug.Nvimtree',
@@ -33,7 +33,6 @@ return {
 	require "plug.Dressing",
 	require "plug.Cmp",
 	require "plug.Harpoon",
-	-- require "NvimRest", -- INFO: fd error 
 	require "plug.treeNav",
 	require "plug.NeoGit",
 	require "plug.GitSign",
@@ -41,11 +40,15 @@ return {
 	require "plug.friendly",
 	require "plug.autoTag",
 	require "plug.TodoCmp", -- TODO fix the vs-snippets
-  require "plug.scoopNvim", -- TODO! keymaps
-  -- require "neoTree",
   require "plug.oilNvim",
-  -- require "colorscheme.nord"
-  -- require "tabbyNvim",
+  --
+  -- copilot setup
+  require "plug.copilot",
+  require "plug.copilotChat"
+
+  -- trash
 	-- require "NvimShip",
 	-- require "NvimUfo", -- [commented till i fix the highlighte]
+  -- require "plug.scoopNvim", -- TODO! keymaps
+	-- require "NvimRest", -- INFO: fd error 
 }

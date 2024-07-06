@@ -1,7 +1,7 @@
 return {
   "nvim-neorg/neorg",
-  version = "*",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  version = "v7.0.0",
+  dependencies = { "luarocks.nvim" },
   config = function()
     vim.keymap.set("n", "<leader>n", ":silent Neorg journal<CR>")
     vim.keymap.set("n", "<leader>nt", ":silent Neorg journal tomorrow <CR>")
