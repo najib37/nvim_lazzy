@@ -8,10 +8,15 @@ return {
 	require "lsp.LspConfig",
 	require "lsp.serverSetting.TsTools",
 
+  -- format config
+  require "format.conform",
+
   -- dap config
 	require "dap.Dap",
+	require "plug.image",
 	-- require "dap.nodeDap",
 
+  require "plug.leetcode",
   -- plugins
 	require 'plug.luarocks',
   require 'plug.tsComments',
@@ -44,8 +49,10 @@ return {
   --
   -- copilot setup
   require "plug.copilot",
-  require "plug.copilotChat"
+  require "plug.copilotChat",
 
+  -- flutter
+  require "plug.fluttertools",
   -- trash
 	-- require "NvimShip",
 	-- require "NvimUfo", -- [commented till i fix the highlighte]
