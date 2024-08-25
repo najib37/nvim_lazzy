@@ -3,8 +3,6 @@ local opts = {
   silent = true,
 }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -19,14 +17,6 @@ local keymap = vim.api.nvim_set_keymap
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
--- Better window navigation
--- <BS>
---
--- command
--- keymap("n", ",,", ":", opts)
--- keymap("i", ",,", "<Esc>:", opts)
-
 -- tabs navigation
 keymap("n", ",1", ":tabNext<cr>", opts)
 keymap("n", ",2", ":tabprevious<cr>", opts)
@@ -35,15 +25,11 @@ keymap("n", "<C-h>", ":tabprevious<cr>", opts)
 -- keymap("n", ",3", ":tabN3<cr>", opts)
 -- keymap("n", ",4", ":tabN4<cr>", opts)
 
-
 keymap("i", "<C-l>", "<ESC>:tabNext<cr>", opts)
 keymap("i", "<C-h>", "<ESC>:tabprevious<cr>", opts)
 
-keymap("n", ",.", "tabclose<cr>:", opts)
-keymap("n", ".,", "tabclose<cr>:", opts)
-
-keymap("n", "fd", ":", opts)
-keymap("i", "df", "<Esc>:", opts)
+-- keymap("n", ",.", "tabclose<cr>:", opts) INFO: dont work with tabs anymore
+-- keymap("n", ".,", "tabclose<cr>:", opts)
 
 keymap("n", "<S-Up>", "", opts)
 keymap("n", "<S-Down>", "", opts)
@@ -54,7 +40,7 @@ keymap("i", "<S-Down>", "", opts)
 keymap("v", "<S-Up>", "", opts)
 keymap("v", "<S-Down>", "", opts)
 
--- keymap("n", ",z", ":BufferLinePickClose<CR>", opts)
+keymap("n", ",z", ":BufferLinePickClose<CR>", opts)
 keymap("n", ",x", ":bdelete<CR>", opts)
 keymap("n", ",c", ":close<cr>", opts)
 keymap("n", "<BS>", "di", opts)
@@ -76,6 +62,12 @@ keymap("n", "<U>", ":redo<CR>", opts)
 
 -- keymap("n", "<A-Up>", "}", opts)
 -- keymap("n", "<A-Down>", "{", opts)
+
+-- comma commands
+keymap("n", ",,", ":", {noremap = true})
+keymap("i", ",,", "<Esc>:", {noremap = true})
+keymap("x", ",,", "<Esc>:", {noremap = true})
+keymap("v", ",,", "<Esc>:", {noremap = true})
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -107,7 +99,6 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
--- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
