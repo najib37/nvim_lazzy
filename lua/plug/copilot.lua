@@ -8,7 +8,7 @@ return {
         enabled = true,
         auto_trigger = false,
         hide_during_completion = true,
-        debounce = 75,
+        debounce = 50,
         keymap = {
           accept = "<M-p>",
           accept_word = "<M-n>",
@@ -19,8 +19,8 @@ return {
         },
       },
     })
-
     require("copilot.suggestion").toggle_auto_trigger()
     require("copilot.suggestion").is_visible()
+    vim.keymap.set('n', ',e', ":Copilot toggle<CR>", { noremap = true, silent = true })
   end,
 }
