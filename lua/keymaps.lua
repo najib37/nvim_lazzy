@@ -18,15 +18,22 @@ local keymap = vim.api.nvim_set_keymap
 --   command_mode = "c",
 
 -- tabs navigation
+keymap("n", "<S-j>", "", opts)
 keymap("n", ",1", ":tabNext<cr>", opts)
 keymap("n", ",2", ":tabprevious<cr>", opts)
 keymap("n", "<C-l>", ":tabNext<cr>", opts)
 keymap("n", "<C-h>", ":tabprevious<cr>", opts)
 -- keymap("n", ",3", ":tabN3<cr>", opts)
 -- keymap("n", ",4", ":tabN4<cr>", opts)
+keymap('i', ";;" , "<Esc>:", {})
+keymap('x', ";;" , "<Esc>:'<,'>:CopilotChat", {})
+keymap('n', ";;" , "<Esc>:", {})
+keymap('t', ";;" , "<Esc>:", {})
 
-keymap("i", "<C-l>", "<ESC>:tabNext<cr>", opts)
-keymap("i", "<C-h>", "<ESC>:tabprevious<cr>", opts)
+keymap('t', '<Esc>', [[<C-\><C-n>]], opts)
+
+-- keymap("i", "<C-l>", "<ESC>:tabNext<cr>", opts)
+-- keymap("i", "<C-h>", "<ESC>:tabprevious<cr>", opts)
 
 -- keymap("n", ",.", "tabclose<cr>:", opts) INFO: dont work with tabs anymore
 -- keymap("n", ".,", "tabclose<cr>:", opts)
@@ -47,12 +54,15 @@ keymap("n", "<BS>", "di", opts)
 
 keymap("n", "<leader>w", ":w!<CR>", opts)
 keymap("n", "<leader>q", ":wq<CR>", opts)
--- keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-h>", "<C-w>j", opts)
 -- keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>k", opts)
+keymap("n", "<M-Right>", "<C-w>l", opts)
+keymap("n", "<M-Left>", "<C-w>h", opts)
+
 keymap("n", "<C-u>", ":redo<CR>", opts)
-keymap("n", "<U>", ":redo<CR>", opts)
+keymap("n", "<S-u>", ":redo<CR>", opts)
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -64,18 +74,19 @@ keymap("n", "<U>", ":redo<CR>", opts)
 -- keymap("n", "<A-Down>", "{", opts)
 
 -- comma commands
-keymap("n", ",,", ":", {noremap = true})
-keymap("i", ",,", "<Esc>:", {noremap = true})
-keymap("x", ",,", "<Esc>:", {noremap = true})
-keymap("v", ",,", "<Esc>:", {noremap = true})
+keymap("n", ",,", ":w<CR>", opts)
+keymap("i", ",,", "<Esc>:w<CR>", opts)
+keymap("x", ",,", "<Esc>:w<CR>", opts)
+keymap("v", ",,", "<Esc>:w<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+-- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 

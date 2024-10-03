@@ -2,7 +2,7 @@ return {
   'gsuuon/tshjkl.nvim',
   opts = {
     keymaps = {
-      toggle = '<leader>ct',
+      toggle = "<m-x>",
     },
     marks = {
       parent = {

@@ -17,6 +17,8 @@ return {
 	-- require "dap.nodeDap",
 
   require "plug.leetcode",
+  require "plug.presistence",
+  require "plug.aerial",
   -- plugins
 	require 'plug.luarocks',
   require 'plug.tsComments',
@@ -48,8 +50,13 @@ return {
   require "plug.oilNvim",
   --
   -- copilot setup
-  require "plug.copilot",
+  -- require "plug.copilot",
   require "plug.copilotChat",
+
+  -- require "plug.TokyoNight",
+  -- require "plug.capuccin",
+  require "plug.dracula",
+  require "plug.monokai",
 
   -- flutter
   require "plug.fluttertools",

@@ -30,9 +30,18 @@ return {
 			end,
 			desc = "horizontal terminal"
 		},
+		{
+			"<leader>tv",
+			function()
+				newTerm(nil, "vertical", 100):toggle()
+			end,
+			desc = "horizontal terminal"
+		},
 	},
 	config = function() 
-		require("toggleterm").setup{};
+		require("toggleterm").setup{
+      size = 70,
+    };
 	end
 
 }
