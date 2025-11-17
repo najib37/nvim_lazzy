@@ -8,9 +8,9 @@ return {
   },
   config = function()
     require("aerial").setup({
-      max_width = 50,
-      width = 50,
-      min_width = 10,
+      max_width = 30,
+      width = 30,
+      min_width = 20,
       placement = "window",
       on_attach = function(bufnr)
         vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })

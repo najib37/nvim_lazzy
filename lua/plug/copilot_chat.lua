@@ -7,7 +7,7 @@ return {
   },
   config = function()
     require("CopilotChat").setup({
-      model = "claude-sonnet-4",
+      model = "claude-sonnet-4.5",
       auto_follow_cursor = true,
       auto_insert_mode = true,
       show_help = true,
@@ -35,7 +35,7 @@ return {
         row = 0.3,
       },
       sticky = {
-        '#buffers',
+        '#buffer',
       },
       prompts = {
         Explain = {

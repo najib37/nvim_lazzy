@@ -15,6 +15,7 @@ return {
   require("plug.mcp"),
   require("plug.copilot"),
   require("plug.copilot_chat"),
+  require("plug.sidekick"),
   require("plug.companion"),
 
 
@@ -37,6 +38,7 @@ return {
   require("plug.alpha"),
   require("plug.diffview"),
   require("plug.window"),
+  require("plug.splits"),
   require("plug.aerial"),
   require("plug.undo_tree"),
   -- require("plug.neotree"),
